@@ -26,7 +26,8 @@ object RegattaEventsTestData {
         LocalDateTime.of(2023, Month.MARCH, 28, 17, 31, 54)
             .plus(293, ChronoUnit.MILLIS)
             .plus(354, ChronoUnit.MICROS)
-            .toInstant(ZoneOffset.UTC)
+            .toInstant(ZoneOffset.UTC),
+        "2.0"
     )
 
     val TEST_EVENT_1 = Event(
@@ -37,9 +38,9 @@ object RegattaEventsTestData {
         "(WP)*",
         "M",
         false,
-        listOf(LocalDate.of(2023, Month.APRIL, 29)),
+        listOf(RegattaDay(LocalDate.of(2023, Month.APRIL, 29),24)),
         null,
-        BoatType("0186744a-be10-73f6-a6d3-f6764796053d", "A", "Senior A"),
+        Category("0186744a-be10-73f6-a6d3-f6764796053d", "A", "Senior A"),
         BoatType("0186744a-6aee-72f1-b997-5b43647e9ada", "4-", "Vierer ohne St."),
         Cost("0187273a-ce47-7333-805e-4ba38cb007f3", "Vierer", "EUR", 30.0),
         "333",
@@ -54,14 +55,17 @@ object RegattaEventsTestData {
         null,
         "M",
         true,
-        listOf(LocalDate.of(2023, Month.APRIL, 29), LocalDate.of(2023, Month.APRIL, 30)),
+        listOf(
+            RegattaDay(LocalDate.of(2023, Month.APRIL, 29),25),
+            RegattaDay(LocalDate.of(2023, Month.APRIL, 30),26)
+            ),
         "testRemarks",
-        BoatType("0186744a-bdad-7003-9f5e-f9f947c149c9", "A Lgr. III", "Junior A Leistungsgruppe III"),
+        Category("0186744a-bdad-7003-9f5e-f9f947c149c9", "A Lgr. III", "Junior A Leistungsgruppe III"),
         BoatType("0186744a-6aa9-71d6-990c-1a071de5a488", "1x", "Einer"),
         Cost("0187273a-1906-7013-8984-7a8416d80fcd", "Einer", "EUR", 18.0)
     )
 
-    val TEST_EVENTS = Events(
+    val TEST_EVENTS = DrvRegatta(
         TEST_METADATA,
         TEST_REGATTA,
         listOf(TEST_EVENT_1, TEST_EVENT_2)

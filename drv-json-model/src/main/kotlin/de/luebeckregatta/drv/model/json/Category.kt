@@ -2,7 +2,7 @@ package de.luebeckregatta.drv.model.json
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
-data class BoatType(
+data class Category(
 
 	@field:JsonProperty("id")
 	val id: String? = null,

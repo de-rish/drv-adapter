@@ -13,7 +13,7 @@ class ParserReadTest {
         val jsonString = TestUtils.readStringContentFromTestResourceFile("regatta-events-to-parse.json")
 
         // WHEN
-        val actualParsedEvents = DrvJsonParser.parseEvents(jsonString)
+        val actualParsedEvents = DrvJsonParser.parseDrvRegatta(jsonString)
 
         // THEN
         val softly = SoftAssertions()

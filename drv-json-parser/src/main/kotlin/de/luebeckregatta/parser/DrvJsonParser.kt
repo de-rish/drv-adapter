@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.databind.json.JsonMapper
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.kotlin.KotlinModule
-import de.luebeckregatta.drv.model.json.Events
+import de.luebeckregatta.drv.model.json.DrvRegatta
 
 object DrvJsonParser {
 
@@ -18,7 +18,7 @@ object DrvJsonParser {
         .registerModule(JavaTimeModule())
         .registerModule(KotlinModule(nullToEmptyCollection = true, nullToEmptyMap = true))
 
-    fun parseEvents(jsonString: String): Events {
-        return jsonMapper.readValue(jsonString, Events::class.java)
+    fun parseDrvRegatta(jsonString: String): DrvRegatta {
+        return jsonMapper.readValue(jsonString, DrvRegatta::class.java)
     }
 }
