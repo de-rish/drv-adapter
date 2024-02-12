@@ -1,25 +1,48 @@
 package de.luebeckregatta.drv.model.json
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import java.time.LocalDate
 
 data class Event(
-    val id: String,
-    val number: String,
-    val code: String,
-    val name: String,
+
+    @field:JsonProperty("id")
+    val id: String? = null,
+
+    @field:JsonProperty("number")
+	val number: String? = null,
+
+    @field:JsonProperty("code")
+	val code: String? = null,
+
+    @field:JsonProperty("name")
+    val name: String? = null,
+
+    @field:JsonProperty("addition")
     val addition: String? = null,
+
+    @field:JsonProperty("sex")
     val sex: String? = null,
+
+    @field:JsonProperty("weighed")
     val weighed: Boolean? = null,
-    val days: List<LocalDate>,
+
+    @field:JsonProperty("days")
+    val days: List<RegattaDay>,
+
+    @field:JsonProperty("remarks")
     val remarks: String? = null,
-    val category: BoatType? = null,
+
+    @field:JsonProperty("category")
+    val category: Category? = null,
+
+    @field:JsonProperty("boattype")
     val boattype: BoatType? = null,
-    val cost: Cost? = null,
 
-    @JsonProperty("parent_event_id")
-    val parentEventId: String? = null,
+    @field:JsonProperty("cost")
+	val cost: Cost? = null,
 
-    @JsonProperty("number_addition")
-    val numberAddition: String? = null
+    @field:JsonProperty("parent_event_id")
+	val parentEventId: String? = null,
+
+    @field:JsonProperty("number_addition")
+	val numberAddition: String? = null
 )
