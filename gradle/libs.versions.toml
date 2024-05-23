@@ -11,7 +11,7 @@ assertJ = "3.24.2"
 xjc-plugin = "2.0.0"
 jaxb-xew-plugin = "1.11"
 jaxb2-basics = "0.13.1"
-threeten-jaxb = "1.2"
+threeten-jaxb = "2.2.0"
 jakarta-xml = "2.3.3"
 
 [libraries]
