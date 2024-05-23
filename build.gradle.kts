@@ -14,10 +14,11 @@ subprojects {
 
     group = "de.luebeckregatta"
     val gitVersion: groovy.lang.Closure<String> by extra
-    version = gitVersion()
+    version = gitVersion(mapOf("prefix" to "versions/")) // versions/1.0.0 -> 1.0.0
 
     configure<JavaPluginExtension> {
         sourceCompatibility = JavaVersion.VERSION_11
+        withSourcesJar()
     }
 
     configure<PublishingExtension> {
@@ -28,16 +29,11 @@ subprojects {
         }
         repositories {
             maven {
-                val rootApiUrl = System.getenv("CI_API_V4_URL")
-                val projectId = System.getenv("CI_PROJECT_ID")
-                url = uri("$rootApiUrl/projects/$projectId/packages/maven")
-                name = "Gitlab"
-                credentials(HttpHeaderCredentials::class) {
-                    name = "Job-Token"
-                    value = System.getenv("CI_JOB_TOKEN")
-                }
-                authentication {
-                    create<HttpHeaderAuthentication>("header")
+                name = "github"
+                url = uri("https://maven.pkg.github.com/de-rish/drv-adapter")
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_TOKEN")
                 }
             }
         }
