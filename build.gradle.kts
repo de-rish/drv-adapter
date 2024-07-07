@@ -1,4 +1,3 @@
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.git.version) apply false
 }
@@ -47,4 +46,6 @@ subprojects {
     }
 }
 
-
+tasks.wrapper {
+    gradleVersion = "8.8"
+}
