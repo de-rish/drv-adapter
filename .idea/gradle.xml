@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/common-test" />
+            <option value="$PROJECT_DIR$/drv-json-model" />
+            <option value="$PROJECT_DIR$/drv-json-parser" />
+            <option value="$PROJECT_DIR$/drv-xml-model" />
+            <option value="$PROJECT_DIR$/drv-xml-parser" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
