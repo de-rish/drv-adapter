@@ -6,12 +6,17 @@ import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.dataformat.xml.XmlMapper
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule
+import com.fasterxml.jackson.module.kotlin.KotlinFeature
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import de.rudern.schemas.service.ausschreibung._2010.TAusschreibung
 import de.rudern.schemas.service.meldungen._2010.RegattaMeldungen
 import de.rudern.schemas.vereinsliste._2008.TVereine
 
 object DrvXmlParser {
+
+    private val kotlinModule = KotlinModule.Builder().configure(KotlinFeature.NullToEmptyCollection, true)
+        .configure(KotlinFeature.NullToEmptyMap, true)
+        .build()
 
     private val xmlMapper = XmlMapper.builder()
         .defaultUseWrapper(false)
@@ -21,7 +26,7 @@ object DrvXmlParser {
         .setSerializationInclusion(JsonInclude.Include.NON_EMPTY)
         .registerModule(JavaTimeModule())
         .registerModule(JaxbAnnotationModule())
-        .registerModule(KotlinModule(nullToEmptyCollection = true, nullToEmptyMap = true ))
+        .registerModule(kotlinModule)
 
     fun parseMeldungen(xmlString: String): RegattaMeldungen {
         return xmlMapper.readValue(xmlString, RegattaMeldungen::class.java)

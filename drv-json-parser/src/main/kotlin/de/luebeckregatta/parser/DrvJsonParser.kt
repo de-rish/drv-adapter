@@ -5,10 +5,15 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.databind.json.JsonMapper
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
+import com.fasterxml.jackson.module.kotlin.KotlinFeature
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import de.luebeckregatta.drv.model.json.DrvRegatta
 
 object DrvJsonParser {
+
+    private val kotlinModule = KotlinModule.Builder().configure(KotlinFeature.NullToEmptyCollection, true)
+        .configure(KotlinFeature.NullToEmptyMap, true)
+        .build()
 
     private val jsonMapper = JsonMapper.builder()
         .configure(SerializationFeature.INDENT_OUTPUT, true)
@@ -16,7 +21,7 @@ object DrvJsonParser {
         .build()
         .setSerializationInclusion(JsonInclude.Include.NON_EMPTY)
         .registerModule(JavaTimeModule())
-        .registerModule(KotlinModule(nullToEmptyCollection = true, nullToEmptyMap = true))
+        .registerModule(kotlinModule)
 
     fun parseDrvRegatta(jsonString: String): DrvRegatta {
         return jsonMapper.readValue(jsonString, DrvRegatta::class.java)
