@@ -8,6 +8,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/common-test" />
+            <option value="$PROJECT_DIR$/drv-csv-model" />
+            <option value="$PROJECT_DIR$/drv-csv-parser" />
             <option value="$PROJECT_DIR$/drv-json-model" />
             <option value="$PROJECT_DIR$/drv-json-parser" />
             <option value="$PROJECT_DIR$/drv-xml-model" />
