@@ -1,8 +1,16 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("java-test-fixtures")
     alias(libs.plugins.kotlin)
+}
+
+dependencies {
+    api(project(":drv-csv-model"))
+
+    implementation(libs.bundles.jackson.csv)
+
+    testApi(testFixtures(project(":common-test")))
+    testImplementation(libs.bundles.test)
 }
 
 tasks.withType<KotlinCompile> {
@@ -11,5 +19,3 @@ tasks.withType<KotlinCompile> {
         jvmTarget = "11"
     }
 }
-
-tasks.withType<PublishToMavenRepository>().configureEach { enabled = false }
