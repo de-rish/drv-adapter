@@ -1,0 +1,11 @@
+Id;Vorname;Nachname;Titel;Geschlecht;Jahrgang;Vereinsnummer;Vereinsname;Startberechtigt
+DEA19-000000;Anna;Ackermann;;w;2000;00000;Verein 0;erweitert
+DEA19-111111;Bernd;Becker;;m;2001;11111;Verein 1;nein
+DEA19-222222;Christine;Schmitt;Dr.;w;2002;22222;Verein 2;ja
+DEA19-333333;Dieter;Dietrich;;m;2003;33333;Verein 3;erweitert
+DEA19-444444;Emil;Engel;;m;2004;44444;Verein 4;erweitert
+DEA19-555555;Franziska;Franke;;w;2005;55555;Verein 5;ja
+DEA19-666666;Gerd;Götz;Prof. Dr.;m;2006;66666;Verein 6;nein
+DEA19-777777;Helga;Hoffmann;;w;2007;77777;Verein 7;erweitert
+DEA19-888888;Inge;Iversen;;w;2008;88888;Verein 8;nein
+DEA19-999999;Johannes;Jung;;m;2009;99999;Verein 9;ja

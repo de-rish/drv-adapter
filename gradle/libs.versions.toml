@@ -16,6 +16,7 @@ jakarta-xml = "2.3.3"
 
 [libraries]
 jackson-dataformat-xml = { group = "com.fasterxml.jackson.dataformat", name = "jackson-dataformat-xml", version.ref = "jackson" }
+jackson-dataformat-csv = { group = "com.fasterxml.jackson.dataformat", name = "jackson-dataformat-csv", version.ref = "jackson" }
 jackson-module-jaxb-annotations = { group = "com.fasterxml.jackson.module", name = "jackson-module-jaxb-annotations", version.ref = "jackson" }
 jackson-datatype-jsr310 = { group = "com.fasterxml.jackson.datatype", name = "jackson-datatype-jsr310", version.ref = "jackson" }
 jackson-module-kotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin", version.ref = "jackson" }
@@ -32,6 +33,7 @@ assertJ-core = { group = "org.assertj", name = "assertj-core", version.ref = "as
 [bundles]
 jackson-xml = ["jackson-dataformat-xml", "jackson-module-jaxb-annotations", "jackson-datatype-jsr310", "jackson-module-kotlin"]
 jackson-json = ["jackson-datatype-jsr310", "jackson-module-kotlin"]
+jackson-csv = ["jackson-dataformat-csv","jackson-datatype-jsr310", "jackson-module-kotlin"]
 jaxb-plugins = ["jaxb-plugin-xew","jaxb-plugin-jaxb2basics"]
 test = ["junit-jupiter", "assertJ-core"]
 
