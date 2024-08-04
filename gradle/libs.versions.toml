@@ -3,7 +3,7 @@ kotlin-plugin = "1.8.10"
 git-version-plugin = "0.15.0"
 jackson = "2.17.2"
 junit = "5.10.3"
-assertJ = "3.24.2"
+assertJ = "3.26.3"
 
 # higher versions use the jakarta package name for javax dependencies
 # and are not compatible with the 'org.unbroken-dome.xjc' gradle plugin in version 2.0.0
