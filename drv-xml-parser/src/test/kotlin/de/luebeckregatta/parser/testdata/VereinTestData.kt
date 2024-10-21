@@ -1,5 +1,6 @@
 package de.luebeckregatta.parser.testdata
 
+import de.rudern.schemas.vereinsliste._2008.TVerein
 import de.rudern.schemas.vereinsliste._2008.TVereine
 import java.math.BigInteger
 import java.time.OffsetDateTime
@@ -7,7 +8,7 @@ import java.time.ZoneOffset
 
 object VereinTestData {
 
-    val TEST_VEREIN_1 = de.rudern.schemas.vereinsliste._2008.TVerein().apply {
+    val TEST_VEREIN_1 = TVerein().apply {
         ort = "testVereinsOrt1"
         name = "testVereinsName1"
         kurzform = "testVereinsKurzform1"
@@ -15,7 +16,7 @@ object VereinTestData {
         id = BigInteger.valueOf(10001)
     }
 
-    val TEST_VEREIN_2 = de.rudern.schemas.vereinsliste._2008.TVerein().apply {
+    val TEST_VEREIN_2 = TVerein().apply {
         ort = "testVereinsOrt2"
         name = "testVereinsName2"
         kurzform = "testVereinsKurzform2"
