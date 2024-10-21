@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.dataformat.xml.XmlMapper
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
-import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule
+import com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationModule
 import com.fasterxml.jackson.module.kotlin.KotlinFeature
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import de.rudern.schemas.service.ausschreibung._2010.TAusschreibung
@@ -25,7 +25,7 @@ object DrvXmlParser {
         .build()
         .setSerializationInclusion(JsonInclude.Include.NON_EMPTY)
         .registerModule(JavaTimeModule())
-        .registerModule(JaxbAnnotationModule())
+        .registerModule(JakartaXmlBindAnnotationModule())
         .registerModule(kotlinModule)
 
     fun parseMeldungen(xmlString: String): RegattaMeldungen {

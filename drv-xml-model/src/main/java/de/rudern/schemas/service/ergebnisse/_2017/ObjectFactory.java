@@ -1,7 +1,7 @@
 
 package de.rudern.schemas.service.ergebnisse._2017;
 
-import javax.xml.bind.annotation.XmlRegistry;
+import jakarta.xml.bind.annotation.XmlRegistry;
 
 
 /**
